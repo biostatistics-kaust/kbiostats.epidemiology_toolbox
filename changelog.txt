@@ -1,0 +1,6 @@
+version 1.beta (5/13/2020)
+ * Population normalizing factor were removed from all models.
+   All hospitalization prediction models uses the population returned by the SEIRS simulation.
+ * A brief description of the SEIRS model is included.
+ * Calculation of cumulative factors were 
+ * SEIRS variable names were changed according to https://www.idmod.org/docs/hiv/model-seir.html
