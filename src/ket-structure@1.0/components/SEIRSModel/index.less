@@ -1,0 +1,114 @@
+@import "normalize.css/normalize.css";
+@import "@blueprintjs/core/lib/css/blueprint.css";
+@import "@blueprintjs/icons/lib/css/blueprint-icons.css";
+
+.param-dialog {
+	width: 90%;
+	min-height: 40%;
+	overflow: hidden;
+
+	.param-pane {
+		max-height: 550px;
+		overflow-y: scroll;
+
+		&>div {
+			width: 99%;
+		}
+	}
+
+	.preview-pane {
+		padding-left: 10px;
+
+		.plot {
+			display: block;
+			height: 400px;
+			min-width: 500px;
+			margin: 0;
+			margin: auto;
+			width: 100%;
+
+			& svg {
+				min-height: 500px;
+			}
+		}
+	}
+
+	.content-pane {
+		.param-pane {
+			padding: 20px !important;
+		}
+
+		.preview-pane {
+			padding: 20px !important;
+
+			.param-dialog .preview-pane .plot {
+				display: block;
+				height: 400px;
+				max-width: 0px !important;
+				margin: 0;
+				margin: auto;
+				width: 100%;
+			}
+		}
+
+		.input-parameter-group {
+			border-left: 1px solid rgba(35, 133, 195, 0.5);
+			padding-left: 10px;
+			margin-bottom: 25px;
+		}
+	}
+}
+
+.bp3-portal {
+	.bp3-transition-container.bp3-popover-enter-done {
+		z-index: 10001;
+
+		.bp3-popover.bp3-tooltip.SIERS-model-param-tooltip {
+			@margin-shift-y: 20px;
+			margin-top: -@margin-shift-y;
+
+			&[style*=bottom] .bp3-popover-arrow {
+				padding-top: @margin-shift-y;
+			}
+
+			.bp3-popover-content {
+				min-width: 350px;
+			}
+		}
+	}
+}
+
+.model-description-dialog {
+	width: 900px;
+	.bp3-dialog-body{
+		height: 500px;
+		overflow: auto;
+	}
+	.equation{
+		*{font-size: 15pt;}
+	}
+	p > span > span.katex{
+		margin-left: 3px;
+		*{font-size: 105%;}
+	}
+	.SEIRS-diagram {
+		margin: auto;
+		width: 80%;
+		min-width: 80%;
+		min-height: 200px;
+		background-image: url(./SEIRS.svg);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+	}
+	*{font-size: 11pt;}
+	p{
+		line-height: 1.5;
+		text-align: justify;
+	}
+}
+
+
+.input-disabled{
+	display: none;
+}

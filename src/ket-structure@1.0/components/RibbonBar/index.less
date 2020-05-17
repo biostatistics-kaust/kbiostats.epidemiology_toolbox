@@ -1,0 +1,153 @@
+@import (once) "../MainWindow/index.less";
+
+@menu-height: 150px;
+@menu-tab-height: 33px;
+@menu-font-size: 13px;
+.ket-main-window{
+	& > .ket-main-menu{
+		height: @menu-height;
+		//min-height: @menu-height;
+		//max-height: @menu-tab-height;
+
+	    box-shadow: 0 1px 10px 0px rgba(0, 0, 0, 0.4);
+	    /* border: 1px solid #312d3c; */
+	    z-index: 200;
+
+		&.minimized{
+			max-height: @menu-tab-height;
+			transition: linear 0.2s max-height;
+		}
+		&.restored{
+			max-height: @menu-height;
+			transition: linear 0.2s max-height;
+		}
+		overflow: hidden;
+		background-color: @gray-color;
+		& > div > div:nth-child(1){
+			background: @blue-color;
+			height: @menu-tab-height;
+			* {
+				background: transparent;
+				color: white!important;
+			}
+			& > div, & > div > div, [role="tablist"]{
+				height: 100%;
+				width: 100%;
+			}
+			/*[role="tablist"] > [role="tab"]:nth-last-child(1){
+				background: transparent;
+				position: absolute;
+				right: 0;
+			}*/
+			[role="tablist"] > [role="tab"]{
+				padding: 0px!important;
+				font-size: @menu-font-size;
+				padding-top: (@menu-tab-height - @menu-font-size) * 0.35;
+				&::after{
+					@bar-tab-height: 3px;
+					height: 10px;
+					width: 100%;
+					display: block;
+					margin-bottom: (@menu-tab-height - @bar-tab-height);
+					background: #c7c7c722;
+				}
+				div{
+				    padding: 9px 30px;
+    				margin: 0;
+				}
+				&:hover{
+					background: rgba(255, 255, 255, 0.2);
+					transition: linear 1s background;
+					&::after{
+						background: #c7c7c777;
+					}
+				}
+				&[aria-selected="true"]{
+					background: @gray-color;
+					*{
+						color: rgba(0, 0, 0, 0.7)!important;
+					}
+					&:hover{
+						background: rgba(255, 255, 255, 0.7);
+						transition: linear 1s background;
+					}
+					&::after{
+						background: #36799d;
+						background: #a26f5f;
+					}
+				}
+			}
+		}
+		& > div > div:nth-child(2) > *{
+			background-color: transparent;
+			border: none;
+			padding: 5px; 
+			button.big {
+				display: inline-block!important;
+				min-height: 70px;
+				min-height: (@menu-height - @menu-tab-height) * 0.9;
+				min-width: 60px;
+				&, & > * {
+					display: block;
+					text-align: center;
+				}
+				& > .bp3-button-text {
+					//display: block;
+				    width: 100%;
+				    padding: 0;
+				    text-align: center;
+				    margin-left: 0px;
+				    margin-right: 0px;
+				    min-height: 50px;
+    				margin-bottom: -15px;
+				}
+				& > span[icon] {
+					display: inline-block;
+					margin-bottom: 5px;
+					zoom: 1.45;
+					padding: 0px 10px;
+				    margin-left: 0;
+				    margin-right: 0;
+				}
+			}
+		}
+		* {
+			user-select: none!important;
+			cursor: default!important;
+		}
+		.minimize-bar{
+			background-color: transparent;
+			color: white;
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 40px;
+			z-index: 1000;
+			height: @menu-tab-height;
+			border: none;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			* {
+				color: white;
+			}
+			&:hover{
+				background-color: rgba(255, 255, 255, 0.2);
+				transition: linear 1s background-color;
+			}
+		}
+	}
+}
+
+
+.ket-main-window{
+	.bp3-slider.bp3-inline{
+		@component-pos-y-shift: 26px;
+		  display: inline-block;
+		  width: 200px;
+		  top: @component-pos-y-shift;
+		  margin-left: 10px;
+		  margin-top: -@component-pos-y-shift;
+	}
+}

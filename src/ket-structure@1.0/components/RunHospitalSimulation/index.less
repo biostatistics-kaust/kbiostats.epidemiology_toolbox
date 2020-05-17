@@ -1,0 +1,105 @@
+.run-simple-hospital-simulation {
+
+	.occupancy-dates {
+		max-height: 300px;
+		overflow-y: auto;
+	}
+
+	.SEIRS-additional-data {
+		max-height: 400px;
+	}
+
+	.content-pane {
+		.bp3-html-table {
+			margin-bottom: 20px;
+		}
+	}
+
+
+	.simple-hospital-capacity-plot-container {
+		width: calc(100% - 50px);
+		height: calc(100% - 50px);
+		width: 600px;
+		height: 500px;
+		display: block;
+		margin: auto;
+		margin-top: 30px;
+		user-select: none;
+
+		* {
+			user-select: none!important;
+		}
+
+		.dygraph-legend {
+			.dygraph-legend {
+				width: 200px;
+				backdrop-filter: blur(2px);
+				background-color: rgba(255, 255, 255, 0.1);
+				padding: 5px;
+				//border: 1px solid rgba(255, 255, 255, 0.6);
+				border-radius: 5px;
+				width: 250px;
+				left: unset;
+				top: 5px;
+				right: 10px;
+				display: inline-block;
+				position: absolute;
+				overflow: hidden;
+
+
+				.series {
+					.mark {
+						width: 20px;
+						height: 7px;
+						display: inline-block;
+						position: relative;
+						top: -2px;
+						border-radius: 12px;
+						width: 12px;
+						height: 12px;
+						top: 0px;
+						left: 3px;
+						margin-right: 8px;
+					}
+
+					.label {
+						font-weight: bold;
+						display: inline-block;
+						width: 50px;
+					}
+
+					.value {
+						display: inline-block;
+						width: 50px;
+					}
+
+					&.series-enabled{
+							opacity: 1.0;
+						}
+					&.series-disabled{
+							opacity: 0.2;
+							transition: linear 200ms opacity;
+					}
+				}
+
+				.time {
+					.mark {
+						display: inline-block;
+						width: 20px;
+						font-weight: bold;
+					}
+
+					.label {}
+				}
+			}
+		}
+	}
+
+}
+
+.param-capacity-dialog {
+	.bp3-dialog-body {
+		max-height: 500px !important;
+		overflow: auto;
+	}
+}

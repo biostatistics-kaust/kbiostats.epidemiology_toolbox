@@ -1,0 +1,122 @@
+//@import (css) "./google-fonts.css";
+//12345 // solves the bug
+/**/
+* {
+	font-family: "Open Sans", "Noto Sans", -apple-system, "BlinkMacSystemFont", "Segoe UI", sans-serif;
+	font-size: 10pt;
+}
+
+/*COLORS*/
+@blue-color: #446995;
+@gray-color: #f1f1f1;
+@dark-gray-color: #e2e2e2;
+@white-color: #f9f9f9;
+
+/*POPOVERS*/
+.bp3-popover-content {
+	max-width: 150px;
+}
+
+.bp3-tooltip-indicator {
+	border: none;
+}
+
+.block-element {
+	display: block !important;
+}
+
+.descriptive-property {
+	width: 100%;
+
+	&>* {
+		width: 100%;
+	}
+}
+
+.bp3-overlay.bp3-overlay-scroll-container {
+	z-index: 300;
+	overflow: hidden;
+}
+
+.katex-html {
+	* {
+		border-color: black;
+	}
+}
+
+a:hover {
+	text-decoration: none !important;
+}
+
+.default-container {
+	width: 95% !important;
+	margin: auto;
+}
+
+
+
+/*
+html {
+  @scrollbarBG: #CFD8DC;
+  @scrollbarBG: transparent;
+  @thumbBG: #90A4AE;
+*::-webkit-scrollbar {
+  width: 11px;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(@thumbBG) var(@scrollbarBG);
+}
+*::-webkit-scrollbar-track {
+  background: var(@scrollbarBG);
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(@thumbBG) ;
+  border-radius: 6px;
+  border: 3px solid var(@scrollbarBG);
+}
+}
+*/
+@scrollbarBG: #CFD8DC;
+@scrollbarBG: transparent;
+@thumbBG: #90A4AE;
+@thumbBG: #446995;
+//@thumbBG: #5883b7;
+
+::-webkit-scrollbar {
+	width: 11px;
+}
+
+* {
+	scrollbar-width: thin;
+	scrollbar-color: @thumbBG @scrollbarBG;
+}
+
+::-webkit-scrollbar-track {
+	background: @scrollbarBG;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: @thumbBG;
+	border-radius: 6px;
+	border: 3px solid @scrollbarBG;
+}
+
+.bp3-button {
+	cursor: default;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+
+.bp3-dialog-body {
+	.uppercase {
+		font-size: 9pt;
+	}
+}
+
+.nav-container {
+	margin-bottom: 7px;
+}
+
+/****/

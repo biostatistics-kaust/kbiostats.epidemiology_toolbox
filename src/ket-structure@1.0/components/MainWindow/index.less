@@ -1,0 +1,66 @@
+@import (once) "normalize.css/normalize.css";
+@import (once) "@blueprintjs/core/lib/css/blueprint.css";
+@import (once) "@blueprintjs/icons/lib/css/blueprint-icons.css";
+@import (once) "./general.less";
+
+body{
+	overflow: hidden;
+	//height: 100%;
+}
+
+.shiny-connector{
+}
+
+.ket-main-window{
+	position: absolute!important;
+	top: 0!important;
+	bottom: 0!important;
+	left: 0!important;
+	right: 0!important;
+	width: 100%!important;
+	height: 100%!important;
+	display: flex;
+    flex-flow: column;
+	.ket-main-content{
+		flex: 1 1 auto;
+		//
+		height: calc(100% - 150px - 20px);
+		background-color: @dark-gray-color;
+		& > *, & > .router > * {
+			height: 100%;
+		}
+		.three-pane-window{
+			& > *[class*=pane] {
+				padding: 10px;
+				overflow: auto;
+			}
+			.left-pane{
+				padding-right: 30px;
+			}
+			.right-pane{}
+			.content-pane{
+				background-color: white;
+			}
+		}
+	}
+	.ket-main-footer{
+		//flex: 0 1 40px;
+		flex-grow: 0;
+	    flex-shrink: 1;
+	    flex-basis: 20px;
+	    padding-top: 2px;
+	    padding-left: 10px;
+	    z-index: 1000;
+	    position: absolute;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+	}
+	.bp3-dialog-container{
+		min-height: auto!important;
+	}
+	
+.timeLine-main-data-task-side{
+    cursor: col-resize!important;
+}
+}

@@ -1,0 +1,25 @@
+https://www.mdpi.com/2227-7390/5/1/7/htm
+
+b  Birth Rate   birthspersonday   Birth rate of newborns each year
+d  Death Rate   deathspersonday   Death rate of susceptible, exposed, infected, and recovered individuals each year
+γ  Recovery Rate (Infected to Recovered)  days−1  Rate at which infected individuals leave infected class and enter recovered class
+
+ρ  Vaccination Rate (Susceptible)  days−1  Rate at which susceptible individuals are vaccinated and leave susceptible class and enter recovered class to gain temporary immunity
+1/ρ   Mean Susceptibility Period (Pre-Vaccination of Susceptible Individuals)  days  Time for susceptible individuals to become recovered individuals
+
+α  Transmission Rate (Recovered to Susceptible)  days−1  Rate at which recovered individuals lose temporary immunity and leave recovered class and enter susceptible class
+1/α   Mean Temporary Immunity Period  days  Time for recovered individuals to become susceptible individuals
+
+β  Transmission Rate (Susceptible to Infected)  days−1  Rate at which susceptible individuals become exposed by infected individuals and leave susceptible class and enter exposed class
+1/β   Mean Susceptibility Period (Pre-Exposed Individuals)  days  Time for susceptible individuals to become exposed individuals
+
+σ  Transmission Rate (Exposed to Infected)  days−1  Rate at which exposed individuals become infected by incubating infection and leave exposed class and enter infected class
+1/σ   Mean Latency Period  days  Time for exposed individuals to become infected individuals
+
+ν  Vaccination Proportion (Newborns)  Dimensionless  Proportion of vaccinated newborns
+1/γ   Mean Infectious Period  days  Time for infected individuals to become recovered individuals
+
+
+Other references
+    https://web.stanford.edu/~jhj1/teachingdocs/Jones-on-R0.pdf
+    http://www.public.asu.edu/~hnesse/classes/seir.html

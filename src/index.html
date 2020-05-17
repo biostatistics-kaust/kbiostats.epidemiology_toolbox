@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Epidemic toolbox</title>
+  <!--
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script type="application/shiny-singletons">12b42a8f0f7c798243d223ce8cf7a0d518f6c50a</script>
+  <script type="application/html-dependencies">json2[2014.02.04];jquery[3.4.1];shiny[1.4.0];selectize[0.11.2];ionrangeslider[2.1.6];strftime[0.9.2];bootstrap[3.4.1]</script>
+  <script src ="./shiny-deps/json2-min.js"></script>
+  <script src ="./shiny-deps/jquery.js"></script>
+  <link   href="./shiny-deps/shiny.css" rel="stylesheet" />
+  <script src ="./shiny-deps/shiny.js"></script>
+  <link   href="./shiny-deps/selectize.bootstrap3.css" rel="stylesheet" />
+  <script src ="./shiny-deps/selectize.min.js"></script>
+  <link   href="./shiny-deps/ion.rangeSlider.css" rel="stylesheet" />
+  <link   href="./shiny-deps/ion.rangeSlider.skinShiny.css" rel="stylesheet" />
+  <script src ="./shiny-deps/ion.rangeSlider.js"></script>
+  <script src ="./shiny-deps/strftime-min.js"></script>
+  <meta   name="viewport" content="width=device-width, initial-scale=1" />
+  <link   href="./shiny-deps/bootstrap.css" rel="stylesheet" />
+  <script src ="./shiny-deps/bootstrap.js"></script>
+  <script src ="./shiny-deps/html5shiv.min.js"></script>
+  <script src ="./shiny-deps/respond.min.js"></script>
+  <script src ="./shiny-deps/MathJax.js"></script>
+-->
+  <!-- {{ headContent() }} -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <script>
+  /**/
+  (function() {
+    if (typeof(Array.prototype.flat) == "undefined") {
+      console.warn("POLYFILL: Array.prototype.flat:", (typeof(Array.prototype.flat) == "undefined"))
+      Array.prototype.flat = function() {
+        let depth = isNaN(arguments[0]) ? 1 : Number(arguments[0]);
+
+        return depth ? Array.prototype.reduce.call(this, function(acc, cur) {
+          if (Array.isArray(cur)) {
+            acc.push.apply(acc, Array.prototype.flat.call(cur, depth - 1));
+          } else {
+            acc.push(cur);
+          }
+
+          return acc;
+        }, []) : Array.prototype.slice.call(this);
+      };
+    }
+
+  })();
+  //https://gitlab.com/moongoal/js-polyfill-object.fromentries/-/blob/master/index.js
+  (function() {
+    if (!Object.fromEntries) {
+      console.warn("POLYFILL: Object.fromEntries:", (!Object.fromEntries))
+      Object.defineProperty(Object, 'fromEntries', {
+        value(entries) {
+          if (!entries || !entries[Symbol.iterator]) { throw new Error('Object.fromEntries() requires a single iterable argument'); }
+
+          const o = {};
+
+          Object.keys(entries).forEach((key) => {
+            const [k, v] = entries[key];
+
+            o[k] = v;
+          });
+
+          return o;
+        },
+      });
+    }
+  })();
+
+  (function() {
+    //https://stackoverflow.com/questions/45849831/object-entries-alternative-for-internet-explorer-and-reactjs
+    if (!Object.entries) {
+      console.warn("POLYFILL: Object.entries:", (!Object.entries))
+      Object.entries = function(obj) {
+        var ownProps = Object.keys(obj),
+          i = ownProps.length,
+          resArray = new Array(i); // preallocate the Array
+        while (i--)
+          resArray[i] = [ownProps[i], obj[ownProps[i]]];
+
+        return resArray;
+      };
+    }
+
+    return Object
+
+  })();
+
+  /**/
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <div id="modal-root"></div>
+  <script src="./main.js"></script>
+  <!--
+  <div class="shiny-connector">
+    <div id="sir_model_parameters">
+      {{sir_model_parameters}}
+    </div>
+    <div id="sir_output_parameters">
+      {{sir_output_parameters}}
+    </div>
+  </div>
+-->
+</body>
+
+</html>

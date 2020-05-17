@@ -1,0 +1,39 @@
+//@import (multiple) 'katex/dist/katex.min.css'; // It does not work from here
+@import "../MainWindow/general.less";
+
+.ket-edit-intervention {
+	.splitter-container {
+		&>.left-pane {
+			padding-left: 10px;
+			padding-right: 10px !important;
+		}
+
+		.bp3-dialog-container {
+			.bp3-dialog {
+				margin-top: 0;
+				margin-bottom: 0;
+				border: none;
+				background-color: transparent;
+			}
+		}
+	}
+}
+
+
+.left-pane.model-edit-intervention {
+	max-height: 550px;
+	overflow-y: auto;
+
+	.dialog-intervention-params {
+		padding-bottom: 10px;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		margin-bottom: 10px;
+	}
+
+	.button-log-details {
+		//margin-top: 20px;
+		margin: 5px;
+	}
+
+	.log-details {}
+}
